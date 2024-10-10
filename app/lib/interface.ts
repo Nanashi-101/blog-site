@@ -6,3 +6,10 @@ export interface BlogInterface {
     currentSlug: string;
     blogImage: any
 }
+
+export interface BlogArticleInterface {
+    title: string;
+    currentSlug: string;
+    blogImage: any;
+    content: any;
+}
