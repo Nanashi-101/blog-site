@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Hero from "./components/hero";
 import React from "react";
+import { TbArrowUpRight } from "react-icons/tb";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 async function getBlogData() {
   const query = `
@@ -29,7 +31,10 @@ export default async function Home() {
       <Hero />
       <div className="grid grid-cols-1 md:grid-cols-3 mt-5 gap-8 justify-center">
         {data.map((blog: BlogInterface, idx) => (
-          <Card key={idx} className="flex flex-col justify-between">
+          <Card
+            key={idx}
+            className="flex flex-col justify-between hover:scale-105 transition-all ease-linear cls"
+          >
             <Image
               className="rounded-t-lg"
               src={urlFor(blog.blogImage).url()}
@@ -42,17 +47,23 @@ export default async function Home() {
               quality={75}
               style={{ aspectRatio: "16/9" }}
             />
-            <h1 className="text-2xl font-bold line-clamp-2 px-5 py-3">{blog.title}</h1>
+            <h1 className="text-2xl font-bold line-clamp-2 px-5 py-3">
+              {blog.title}
+            </h1>
             <CardContent className="mt-5">
               <p className="mt-3 text-pretty line-clamp-2 text-gray-600 dark:text-gray-400">
                 {blog.description}
               </p>
-              <Button
-                asChild
-                className="w-full mt-5 bg-red-600 text-white font-semibold text-xl dark:hover:text-black"
+              <Link
+                href={`/blog/${blog.currentSlug}`}
+                className="mt-6 group transition-all ease-in bg-[#D9413B] px-5 py-3 flex text-white w-[100%] rounded-lg items-center justify-center text-lg font-semibold"
               >
-                <Link href={`/blog/${blog.currentSlug}`}>Read more</Link>
-              </Button>
+                Read more
+                <FaArrowUpRightFromSquare
+                  size={20}
+                  className="ml-2 group-hover:-translate-y-1 group-hover:translate-x-1  font-bold transition-all ease-in"
+                />
+              </Link>
             </CardContent>
           </Card>
         ))}

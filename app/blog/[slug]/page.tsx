@@ -25,7 +25,7 @@ const Blog_Article = async ({ params }: { params: { slug: string } }) => {
     <React.Fragment>
       <div className="w-full flex flex-col items-center mt-8">
         <h1>
-          <span className="block font-semibold text-center text-2xl text-red-600 tracking-wide">
+          <span className="block font-semibold text-center text-2xl text-[#D9413B] tracking-wide">
             Sam<span className="text-black dark:text-white">Blogs</span> -{" "}
             <span className="capitalize">built to explore</span>
           </span>
@@ -41,7 +41,7 @@ const Blog_Article = async ({ params }: { params: { slug: string } }) => {
           priority
           className="flex items-center justify-center rounded-lg mt-8 border"
         />
-        <div className="mt-16 prose prose-xl prose-headings:text-2xl prose-headings:font-extrabold prose-headings:text-red-600 dark:prose-invert prose-blue">
+        <div className="mt-16 prose prose-xl prose-headings:text-2xl prose-headings:font-extrabold prose-headings:text-[#D9413B] dark:prose-invert prose-blue prose-li:marker:text-[#D9413B]">
           <PortableText value={data.content}/>
         </div>
       </div>
