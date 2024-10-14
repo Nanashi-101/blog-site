@@ -41,7 +41,7 @@ const Blog_Article = async ({ params }: { params: { slug: string } }) => {
           priority
           className="flex items-center justify-center rounded-lg mt-8 border"
         />
-        <div className="mt-16 prose prose-xl prose-headings:text-2xl prose-headings:font-extrabold prose-headings:text-[#D9413B] dark:prose-invert prose-blue prose-li:marker:text-[#D9413B]">
+        <div className="mt-16 prose prose-md sm:prose-lg md:prose-xl prose-headings:text-xl sm:prose-headings:text-2xl prose-headings:font-extrabold prose-headings:text-[#D9413B] dark:prose-invert prose-blue prose-li:marker:text-[#D9413B]">
           <PortableText value={data.content}/>
         </div>
       </div>
